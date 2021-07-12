@@ -1,19 +1,20 @@
+import Link from "next/link";
 import tw from "tailwind-styled-components";
 
 export const LoginPage = () => {
   return (
-    <main className="w-full h-screen flex justify-center items-center bg-blue-100 p-10">
-      <section className="max-w-screen-sm w-full flex flex-col gap-10">
+    <LayoutMain>
+      <section className="max-w-sm w-full flex flex-col gap-10">
         <LayoutSection>
           <img src="/alurakut.svg" alt="logo alurakut" className="w-40 mb-10" />
-          <h2>
+          <h2 className="w-full">
             <TextSpan>Conecte-se</TextSpan> com outros participantes da 3°
             Imersão React
           </h2>
-          <h2>
+          <h2 className="w-full">
             <TextSpan>Compartilhe</TextSpan> seu projeto
           </h2>
-          <h2>
+          <h2 className="w-full">
             <TextSpan>Conheça</TextSpan> o projeto dos outros participantes
           </h2>
         </LayoutSection>
@@ -22,16 +23,24 @@ export const LoginPage = () => {
           <input
             className="border rounded-md border-gray-300 h-10 px-4 text-sm flex w-full"
             type="text"
-            placeholder="ex: fischerafael"
+            placeholder="Usuário Github"
           />
           <button className="w-full bg-pink-500 h-10 rounded-md text-white flex items-center justify-center">
             Entrar com Github
           </button>
+
+          <Link href="https://github.com/fischerafael">
+            <a className="text-sm font-medium" target="_blank">
+              Desenvolvido por Rafael Fischer
+            </a>
+          </Link>
         </LayoutSectionSecondary>
       </section>
-    </main>
+    </LayoutMain>
   );
 };
+
+export const LayoutMain = tw.main`w-full h-screen flex justify-center items-center bg-blue-100 p-10`;
 
 export const TextSpan = tw.span`
     text-pink-500 font-bold
