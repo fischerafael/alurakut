@@ -6,7 +6,12 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        header: "15vh",
+        main: "85vh",
+      },
+    },
   },
   variants: {
     extend: {},

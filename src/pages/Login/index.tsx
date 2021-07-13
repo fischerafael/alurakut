@@ -1,6 +1,10 @@
 import Link from "next/link";
 import tw from "tailwind-styled-components";
 
+import { MainButton } from "../../../styles/design-system/Button";
+import { Input } from "../../../styles/design-system/Input";
+import { LayoutMain } from "../../../styles/design-system/Layout";
+
 export const LoginPage = () => {
   return (
     <LayoutMain>
@@ -20,14 +24,8 @@ export const LoginPage = () => {
         </LayoutSection>
 
         <LayoutSectionSecondary>
-          <input
-            className="border rounded-md border-gray-300 h-10 px-4 text-sm flex w-full"
-            type="text"
-            placeholder="Usuário Github"
-          />
-          <button className="w-full bg-pink-500 h-10 rounded-md text-white flex items-center justify-center">
-            Entrar com Github
-          </button>
+          <Input type="text" placeholder="Usuário Github" />
+          <MainButton className="">Entrar com Github</MainButton>
 
           <Link href="https://github.com/fischerafael">
             <a className="text-sm font-medium" target="_blank">
@@ -40,8 +38,6 @@ export const LoginPage = () => {
   );
 };
 
-export const LayoutMain = tw.main`w-full h-screen flex justify-center items-center bg-blue-100 p-10`;
-
 export const TextSpan = tw.span`
     text-pink-500 font-bold
 `;
@@ -52,8 +48,4 @@ export const LayoutSection = tw.section`
 
 export const LayoutSectionSecondary = tw.section`
     gap-3 flex flex-col items-center w-full
-`;
-
-export const Input = tw.input`
-
 `;
